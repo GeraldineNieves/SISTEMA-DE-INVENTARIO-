@@ -1,0 +1,17 @@
+package com.inventario.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import com.inventario.model.Tiposproveedores;
+
+public interface TiposproveedoresService {
+	
+	public List<Tiposproveedores> listarTiposproveedores();
+	public void llenarDatos();
+	public Tiposproveedores guardarTiposproveedores(Tiposproveedores tiposproveedores);
+	public Optional<Tiposproveedores> buscarTipsoproveedores(Long idTipoprov);
+	public void eliminarTiposproveedores(Long idTipoprov);
+
+
+}

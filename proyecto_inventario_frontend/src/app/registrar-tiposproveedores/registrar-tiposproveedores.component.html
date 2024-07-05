@@ -1,0 +1,31 @@
+<p>registrar-tiposproveedores works!</p>
+<h2 class="mb-5">
+    {{ tiposproveedores ? 'Editar' : 'Nuevo' }} tiposproveedores
+  </h2>
+  
+  <div class="row row-cols-3 justify-content-center" >
+      @if(form){
+        <form  [formGroup]="form" (ngSubmit)="save()">
+  
+          <div class="mb-3">
+           <label for="descripcion">Nombre</label>
+           <input id="descripcion" type="text" placeholder="descripcion" class="form-control"
+           formControlName="descripcion"> 
+         </div>
+        
+         <div class="text-right">
+            <button type="button" class="btn btn-light" routerLink="/">
+                Cancelar
+            </button>
+            <button class="btn btn-primary ms-2">
+              {{ tiposproveedores ? 'Actualizar' : 'Crear' }} tiposproveedores
+  
+              </button>
+         </div>
+        </form>
+      }
+  
+  </div>
+  
+  
+      

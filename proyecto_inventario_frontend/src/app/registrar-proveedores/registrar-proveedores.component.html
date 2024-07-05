@@ -1,0 +1,51 @@
+<p>registrar-proveedores works!</p>
+<h2 class="mb-5">
+  {{ proveedores ? 'Editar' : 'Nuevo' }} proveedores
+</h2>
+
+<div class="row row-cols-3 justify-content-center" >
+    @if(form){
+      <form  [formGroup]="form" (ngSubmit)="save()">
+
+        <div class="mb-3">
+         <label for="nombre">Nombre</label>
+         <input id="nombre" type="text" placeholder="Nombre" class="form-control"
+         formControlName="nombre"> 
+       </div>
+       <div class="mb-3">
+         <label for="telefono">Telefono</label>
+         <input id="telefono" type="telefono" placeholder="Telefono" class="form-control"
+         formControlName="telefono">
+       </div>
+       <div class="mb-3">
+          <label for="direccion">Direccion</label>
+          <input id="direccion" type="direccion" placeholder="direccion" class="form-control"
+          formControlName="direccion">
+        </div>
+        <div class="mb-3">
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="Email" class="form-control"
+          formControlName="email">
+        </div>
+       
+        <div class="mb-3">
+          <label for="descripcion">Descripcion</label>
+          <input id="descripcion" type="descripcion" placeholder="Descripcion" class="form-control"
+          formControlName="proveedores.tiposproveedores.descripcion">
+        </div>
+       <div class="text-right">
+          <button type="button" class="btn btn-light" routerLink="/">
+              Cancelar
+          </button>
+          <button class="btn btn-primary ms-2">
+            {{ proveedores ? 'Actualizar' : 'Crear' }} proveedores
+
+            </button>
+       </div>
+      </form>
+    }
+
+</div>
+
+
+    

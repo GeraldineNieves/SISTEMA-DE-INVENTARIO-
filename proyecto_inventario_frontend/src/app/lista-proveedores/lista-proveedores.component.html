@@ -1,0 +1,37 @@
+
+<h1>Lista de proveedores</h1>
+
+<div class="text-right">
+    <button class="btn btn-primary" routerLink="registrar-proveedores">
+        Nuevo Proveedor
+    </button>
+
+<table class="table table-hover">
+    <thead class="bg-success">
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Telefono</th>
+            <th>Dirección</th>
+            <th>Email</th>
+            <th>Descripcion</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(proveedores of proveedores; track proveedores.idProveedores){
+            <tr>
+                <td>{{proveedores.idProveedores}}</td>
+                <td>{{proveedores.nombre}}</td>
+                <td>{{proveedores.telefono}}</td>
+                <td>{{proveedores.direccion}}</td>
+                <td>{{proveedores.email}}</td>
+                <td>
+                    {{proveedores.tiposproveedores.descripcion}}
+                </td>
+                
+                </tr>
+        }
+           
+    </tbody>
+</table>
+

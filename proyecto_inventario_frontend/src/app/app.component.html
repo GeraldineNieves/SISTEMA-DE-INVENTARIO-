@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a routerLink="/proveedores" routerLinkActive="active" class="nav-link">Lista de proveedores</a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="proveedores/registrar-proveedores" routerLinkActive="active" class="nav-link">Añadir un proveedor</a>
+        </li>
+
+        <li class="nav-item">
+            <a routerLink="tiposproveedores/listartipop" routerLinkActive="active" class="nav-link">Tipos proveedores</a>
+        </li>
+
+        <li class="nav-item">
+            <a routerLink="proveedores/listarcategorias" routerLinkActive="active" class="nav-link">Categorías</a>
+        </li>
+
+        
+        <li class="nav-item">
+            <a routerLink="proveedores/listarstock" routerLinkActive="active" class="nav-link">Stock</a>
+        </li>
+
+        <li class="nav-item">
+            <a routerLink="proveedores/listarproductos" routerLinkActive="active" class="nav-link">Productos</a>
+        </li>
+    </ul>
+</nav>
+
+<h1 class="text-center">{{ title }}</h1>
+
+
+
+
+
+
+
+
+<router-outlet></router-outlet>
+
+

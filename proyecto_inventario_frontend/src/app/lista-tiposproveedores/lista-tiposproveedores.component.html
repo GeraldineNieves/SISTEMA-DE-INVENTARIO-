@@ -1,0 +1,34 @@
+
+<h1 class="text-center">Lista de tipos de proveedores</h1>
+<div class="text-right">
+    <button class="btn btn-primary" routerLink="registrar-tiposproveedores">
+        Nuevo proveedor
+    </button>
+<table class="table table-hover " style="width: 1200px;" >
+    <thead class="btn-light">
+        <tr>
+            <th>id</th>
+            <th>Nombre</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(tiposproveedores of tiposproveedores; track tiposproveedores.idTipoprov){
+            <tr>
+                <td>{{tiposproveedores.idTipoprov}}</td>
+                <td>{{tiposproveedores.descripcion}}</td>
+                
+                <td class="text-end">
+                    <div class="btn-group">
+                        <button class="btn btn-primary" [routerLink]="[tiposproveedores.idTipoprov, 'edit']">
+                            Editar
+                        </button>
+                        <button class="btn btn-danger" (click)="eliminarTiposproveedores(tiposproveedores)">
+                            Eliminar
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            
+        }
+    </tbody>
+</table>

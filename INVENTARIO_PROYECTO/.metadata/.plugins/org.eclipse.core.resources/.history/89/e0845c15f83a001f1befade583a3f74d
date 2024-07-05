@@ -1,0 +1,23 @@
+package com.inventario.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import com.inventario.model.Productos;
+import com.inventario.model.Stock;
+import com.inventario.service.ProductosService;
+import com.inventario.service.StockService;
+
+public class ProductosController {
+	@Autowired
+	ProductosService productosService;
+	
+	//metodo para listar proveedores
+	@GetMapping("/listarproductos")
+    public List<Productos> listarProductos() {
+        return productosService.listarProductos();
+    }
+
+}

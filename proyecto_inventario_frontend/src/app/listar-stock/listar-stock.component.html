@@ -1,0 +1,26 @@
+<h2 class="text-center">Lista de Stock</h2>
+<div class="text-right">
+    <button class="btn btn-primary" routerLink="registrar-tiposproveedores">
+        Nuevo stock
+    </button>
+<table class="table table-hover"  style="width: 1000px">
+    <thead class="bg-success">
+        <tr>
+            <th>Id</th>
+            <th>Descripcion</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(stock of stock; track stock.idStock){
+            <tr>
+                <td>{{stock.idStock}}</td>
+                <td>{{stock.descripcion}}</td>
+                
+                
+            </tr>
+            
+        }
+    </tbody>
+</table>
+
+

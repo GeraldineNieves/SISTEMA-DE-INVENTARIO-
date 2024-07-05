@@ -1,0 +1,17 @@
+package com.inventario.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import com.inventario.model.Proveedores;
+
+public interface ProveedoresService {
+	
+	public List<Proveedores> listarProveedores();
+	public void llenarDatos();
+	public Proveedores guardarProveedores(Proveedores proveedores);
+	public Optional<Proveedores> buscarProveedores(int idProveedores);
+	public void eliminarProveedores(int idProveedores);
+
+
+}

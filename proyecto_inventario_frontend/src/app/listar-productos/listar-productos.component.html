@@ -1,0 +1,43 @@
+<h2 class="text-center">Lista de Productos</h2>
+
+<div class="text-right">
+    <button class="btn btn-primary" routerLink="registrar-proveedores">
+        Nuevo Producto
+    </button>
+
+<table class="table table-hover">
+    <thead class="bg-success">
+        <tr>
+            <th>Id</th>
+            <th>Codigo</th>
+            <th>Descripción</th>
+            <th>PrecioUnitario</th>
+           <th>Categoría</th>
+           <th>Stock</th>
+           <th>Proveedor</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(productos of productos; track productos.idProductos){
+            <tr>
+                <td>{{productos.idProductos}}</td>
+                <td>{{productos.codProductos}}</td>
+                <td>{{productos.descripcion}}</td>
+                <td>{{productos.preciounitario}}</td>
+              
+                <td>
+                    {{productos.categorias.descripcion}}
+                </td>
+                <td>
+                    {{productos.stock.descripcion}}
+                </td>
+                <td>
+                    {{productos.proveedores.nombre}}
+                </td>
+                
+                </tr>
+        }
+           
+    </tbody>
+</table>
+

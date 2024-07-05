@@ -1,0 +1,76 @@
+package com.inventario.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.inventario.model.Proveedores;
+import com.inventario.model.Tiposproveedores;
+import com.inventario.repository.ITiposproveedoresRepository;
+
+@Service
+public class TiposproveedoresServiceImplement implements TiposproveedoresService{
+	
+	@Autowired
+	private ITiposproveedoresRepository repositorio;
+	
+	@Autowired
+	private ITiposproveedoresRepository tiposproveedoresrepositorio;
+
+	@Override
+	public List<Tiposproveedores> listarTiposproveedores() {
+		// TODO Auto-generated method stub
+		return tiposproveedoresrepositorio.findAll();
+	}
+
+	@Override
+	public void llenarDatos() {
+		List<Tiposproveedores> tiposproveedores = new ArrayList<>();
+		// TODO Auto-generated method stub
+		Proveedores proveedores= new Proveedores();
+		proveedores.setNombre("mart");
+		proveedores.setTelefono("939448");
+		proveedores.setDireccion("Av.peru");
+		proveedores.setEmail("gege@gmail.com");
+		repositorio.save(proveedores);
+		
+		
+		Tiposproveedores tiposproveedores1 = new Tiposproveedores();
+		tiposproveedores1.setDescripcion("gaseosas");
+		tiposproveedores1.setProveedores(proveedores);
+		tiposproveedoresrepositorio.save(tipsoproveedores1)
+		
+		
+	
+		
+	}
+	
+
+	@Override
+	public Proveedor guardarProveedor(Proveedor proveedor) {
+		// TODO Auto-generated method stub
+		return proveedorrepositorio.save(proveedor);
+	}
+
+	@Override
+	public Optional<Proveedor> buscarProveedor(int idProveedor) {
+		// TODO Auto-generated method stub
+		return proveedorrepositorio.findById(idProveedor);
+	}
+
+	@Override
+	public void eliminarProveedor(int idProveedor) {
+		// TODO Auto-generated method stub
+		proveedorrepositorio.deleteById(idProveedor);
+		
+	}
+
+	
+	
+	
+
+}
+
+

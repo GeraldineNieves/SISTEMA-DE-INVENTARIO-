@@ -1,0 +1,36 @@
+package com.inventario.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.inventario.model.Proveedores;
+import com.inventario.model.Tiposproveedores;
+import com.inventario.repository.IProveedoresRepository;
+import com.inventario.repository.ITiposproveedoresRepository;
+
+@Service
+public class ProveedoresService {
+	@Autowired
+	IProveedoresRepository repositorios;
+	
+	public List<Proveedores> listarProveedores(){
+		return repositorios.findAll();
+	}
+	
+	public Proveedores  guardarProveedores(Proveedores proveedores) {
+		return repositorios.save(proveedores);
+	}
+	
+	public Proveedores buscarProveedores(Long idProveedores) {
+		return repositorios.findById(idProveedores).orElse(null);
+	}
+	
+	public void eliminarProveedores(Long idProveedores) {
+		 repositorios.deleteById(idProveedores);
+	}
+
+
+
+}
